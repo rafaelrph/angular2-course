@@ -1,3 +1,7 @@
-<p>
-  Courses component!
-</p>
+<h3>List of Courses on {{url}}</h3>
+
+<ul>
+  <li *ngFor="let course of courses">
+    {{course}}
+  </li>
+</ul>
