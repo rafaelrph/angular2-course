@@ -8,6 +8,37 @@
       Sum test = {{1 + getValue()}}
     </p>
   </article>
+  <hr />
+
+  <article>
+    <h3>Two-way data binding</h3>
+    <input type="text" [value]="textValue" (input)="textValue = $event.target.value" />
+    <input type="text" [ngModel]="textValue" (ngModelChange)="textValue = $event" />
+    <input type="text" [(ngModel)]="textValue" />
+    <br />
+    Text = {{textValue}}
+  </article>
+  <hr />
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="clickHere()" class="btn btn-primary">Click Here!</button>
+      <br /><br />
+      
+      <input type="text" (keyup)="onKeyUpInput($event)" (keyup.enter)="saveTextEnter($event)" (blur)="saveTextEnter($event)" />
+      <br />
+      Value = {{value}}
+      <br />
+      Value Saved = {{valueSaved}}
+      
+      <br /><br />
+      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Pass here!</span>
+
+    </div>
+  </article>
+  <hr />
+
   <article>
     <h3>Property Binding</h3>
     <p>
@@ -15,7 +46,8 @@
       <img [src]="urlImage" />
     </p>
   </article>
-  <br /><br />
+  <hr />
+
   <article>
     <h3>Class and Style Binding</h3>
     <div>
